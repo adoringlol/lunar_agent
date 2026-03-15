@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group = 'com.mcctimer.agent'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.ow2.asm:asm:9.6'
+    implementation 'org.ow2.asm:asm-commons:9.6'
+    compileOnly 'org.lwjgl.lwjgl:lwjgl:2.9.2'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Premain-Class': 'com.mcctimer.agent.MCCTimerAgent',
+                'Agent-Class': 'com.mcctimer.agent.MCCTimerAgent',
+                'Can-Redefine-Classes': 'true',
+                'Can-Retransform-Classes': 'true'
+        )
+    }
+}
+
+shadowJar {
+    manifest {
+        attributes(
+                'Premain-Class': 'com.mcctimer.agent.MCCTimerAgent',
+                'Agent-Class': 'com.mcctimer.agent.MCCTimerAgent',
+                'Can-Redefine-Classes': 'true',
+                'Can-Retransform-Classes': 'true'
+        )
+    }
+    archiveClassifier.set('')
+}
+
+build.dependsOn shadowJar

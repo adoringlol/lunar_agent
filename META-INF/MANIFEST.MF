@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Premain-Class: com.mcctimer.agent.MCCTimerAgent
+Agent-Class: com.mcctimer.agent.MCCTimerAgent
+Can-Redefine-Classes: true
+Can-Retransform-Classes: true
+

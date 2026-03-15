@@ -1,0 +1,24 @@
+# Gradle build outputs
+build/
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+.gradletasknamecache
+
+# IDE specific files
+.idea/
+*.iml
+*.iws
+.project
+.classpath
+.settings/
+.vscode/
+
+# Build logs and outputs
+*.log
+build_log*.txt
+build_output.txt
+
+# OS generated files
+.DS_Store
+Thumbs.db
