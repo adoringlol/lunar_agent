@@ -1,5 +1,5 @@
 @echo off
-echo Building MCCTimer Agent...
+echo Building Agent...
 call gradlew.bat build
 if %ERRORLEVEL% NEQ 0 (
     echo BUILD FAILED!
